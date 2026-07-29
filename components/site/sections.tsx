@@ -176,7 +176,7 @@ const stats = [
   { value: "500+", label: "Shops Equipped" },
   { value: "98%", label: "Satisfaction Rate" },
   { value: "24/7", label: "Technical Support" },
-  { value: "XAF", label: "Native Currency" },
+  { value: "Local", label: "Currencies" },
 ];
 
 export function AboutSection() {
@@ -192,7 +192,7 @@ export function AboutSection() {
                 Starlabs Group designs software solutions that address the true challenges of African businesses. We know that an unstable internet connection shouldn't stop your sales.
               </p>
               <p>
-                That's why Starlabs POS was built from day one as a robust, secure desktop solution capable of operating completely independently, while natively managing your transactions in CFA Francs (XAF).
+                That's why Starlabs POS was built from day one as a robust, secure desktop solution capable of operating completely independently, natively managing your local transactions.
               </p>
             </div>
 

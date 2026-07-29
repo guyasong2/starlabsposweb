@@ -72,7 +72,7 @@ export default function Pricing() {
       <div className="container">
         <div className="text-center mb-16 max-w-2xl mx-auto">
           <span className="tagline">Pricing</span>
-          <h2 className="heading-lg">Transparent pricing, in XAF</h2>
+          <h2 className="heading-lg">Transparent pricing</h2>
           <p className="text-body-md mt-4">
             Choose the plan tailored to your business size. All subscriptions include installation, updates, and a 14-day free trial.
           </p>
@@ -100,7 +100,7 @@ export default function Pricing() {
               <div className="mb-6">
                 <div className="flex items-baseline gap-1">
                   <span className="text-4xl font-bold text-text-main">{plan.price}</span>
-                  <span className="font-semibold text-text-main">XAF</span>
+                  <span className="font-semibold text-text-main">FCFA</span>
                 </div>
                 <div className="text-sm text-text-muted mt-1">{plan.period}</div>
               </div>

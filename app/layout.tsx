@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: "%s | Starlabs POS",
   },
   description:
-    "Starlabs POS is a powerful desktop point-of-sale system built for Cameroonian businesses. Manage sales, inventory, products, cashiers and reports — all in XAF.",
+    "Starlabs POS is a powerful desktop point-of-sale system built for Cameroonian businesses. Manage sales, inventory, products, cashiers and reports.",
   keywords: [
     "POS software Cameroon",
     "point of sale Cameroon",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "starlabsgroup",
     "inventory management",
     "sales reporting",
-    "XAF pos",
+    "point of sale software",
     "caisse enregistreuse Cameroun",
   ],
   authors: [{ name: "Starlabs Group", url: "https://starlabsgroup.com" }],
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     siteName: "Starlabs POS",
     title: "Starlabs POS — Smart Point of Sale for Cameroon Businesses",
     description:
-      "Manage your shop, track inventory, and grow your business with Starlabs POS. Built for Cameroonian businesses, priced in XAF.",
+      "Manage your shop, track inventory, and grow your business with Starlabs POS. Built for Cameroonian businesses.",
     images: [
       {
         url: "/og-image.png",
