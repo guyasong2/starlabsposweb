@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Starlabs POS — Smart Point of Sale",
+    title: "Starlabs POSSmart Point of Sale",
     description:
       "The POS software built for Cameroonian businesses. Manage sales, inventory & reports.",
     images: ["/og-image.png"],
