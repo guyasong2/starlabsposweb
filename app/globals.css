@@ -1,26 +1,235 @@
 @import "tailwindcss";
 
+/* ─── Enterprise B2B SaaS Theme ──────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Starlabs Brand Colors */
+  --brand-red:        #C8102E;
+  --brand-red-hover:  #A50D25;
+  --brand-blue:       #1B3F8F;
+  --brand-blue-hover: #153272;
+  --brand-gold:       #D4A017;
+
+  /* Neutrals */
+  --bg-main:          #FFFFFF;
+  --bg-surface:       #F9FAFB;
+  --bg-surface-alt:   #F3F4F6;
+  
+  --border-light:     #E5E7EB;
+  --border-medium:    #D1D5DB;
+
+  --text-main:        #111827;
+  --text-muted:       #4B5563;
+  --text-light:       #6B7280;
+
+  /* UI Constants */
+  --radius-sm:        4px;
+  --radius-md:        8px;
+  --radius-lg:        12px;
+  --shadow-sm:        0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md:        0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg:        0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-brand-red:  var(--brand-red);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-gold: var(--brand-gold);
+  --color-bg-main:    var(--bg-main);
+  --color-bg-surface: var(--bg-surface);
+  --color-text-main:  var(--text-main);
+  --color-text-muted: var(--text-muted);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ─── Base ───────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
 }
+
+/* ─── Typography ─────────────────────────────────────────── */
+.heading-xl {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+}
+
+.heading-lg {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--text-main);
+}
+
+.heading-md {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--text-main);
+}
+
+.text-body-lg { font-size: 1.125rem; line-height: 1.7; color: var(--text-muted); }
+.text-body-md { font-size: 1rem;     line-height: 1.6; color: var(--text-muted); }
+.text-body-sm { font-size: 0.875rem; line-height: 1.5; color: var(--text-light); }
+
+.tagline {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--brand-blue);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+/* ─── Layout ─────────────────────────────────────────────── */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section-py {
+  padding: 6rem 0;
+}
+
+/* ─── Buttons ────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--brand-red);
+  color: #FFFFFF;
+  border: 1px solid var(--brand-red);
+  box-shadow: var(--shadow-sm);
+}
+.btn-primary:hover {
+  background-color: var(--brand-red-hover);
+  border-color: var(--brand-red-hover);
+}
+
+.btn-secondary {
+  background-color: #FFFFFF;
+  color: var(--text-main);
+  border: 1px solid var(--border-medium);
+  box-shadow: var(--shadow-sm);
+}
+.btn-secondary:hover {
+  background-color: var(--bg-surface);
+  border-color: var(--text-muted);
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem; /* text-sm */
+}
+
+.btn-lg {
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+}
+
+.btn-accent {
+  background-color: var(--brand-blue);
+  color: #FFFFFF;
+  border: 1px solid var(--brand-blue);
+  box-shadow: var(--shadow-sm);
+}
+.btn-accent:hover {
+  background-color: var(--brand-blue-hover);
+  border-color: var(--brand-blue-hover);
+}
+
+/* ─── Cards & Surfaces ───────────────────────────────────── */
+.card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.bg-pattern {
+  background-image: radial-gradient(var(--border-medium) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* ─── Specific Components ────────────────────────────────── */
+.mockup-container {
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background: #FFFFFF;
+}
+
+.nav-link {
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-link:hover, .nav-link.active {
+  color: var(--brand-blue);
+}
+
+.faq-row {
+  border-bottom: 1px solid var(--border-light);
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #FFFFFF;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-input:focus {
+  outline: none;
+  border-color: var(--brand-blue);
+  box-shadow: 0 0 0 3px rgba(27, 63, 143, 0.1);
+}
+
+/* ─── Utilities ──────────────────────────────────────────── */
+.text-brand-blue { color: var(--brand-blue); }
+.text-brand-red { color: var(--brand-red); }
+
+/* ─── Animations ─────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in { animation: fadeIn 0.2s ease-out forwards; }
