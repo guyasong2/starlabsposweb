@@ -1,46 +1,40 @@
 "use server";
 
-export async function initiateFapshiPayment(planName: string, amount: number, email?: string) {
+export async function initiateFapshiPayment(planName: string, amount: number) {
+  const apiKey = process.env.FAPSHI_API_KEY;
+
+  if (!apiKey) {
+    console.error("[Fapshi] Missing FAPSHI_API_KEY in environment variables.");
+    return { success: false, error: "Payment service not configured." };
+  }
+
   try {
-    const apiUser = process.env.FAPSHI_API_USER;
-    const apiKey = process.env.FAPSHI_API_KEY;
-
-    if (!apiUser || !apiKey) {
-      console.error("[Fapshi] Missing FAPSHI_API_USER or FAPSHI_API_KEY in environment variables.");
-      return { success: false, error: "Payment service not configured. Please contact us directly." };
-    }
-
-    const payload = {
-      amount: amount,
-      ...(email && { email }),
-      redirectUrl: "https://starlabsposweb.vercel.app",
-      message: `Starlabs POS — ${planName} Plan`,
-      externalId: `starlabs_${planName.toLowerCase()}_${Date.now()}`,
-    };
-
-    console.log("[Fapshi] Initiating payment with payload:", payload);
-
+    // Per Fapshi docs: both apiuser and apikey headers use the same API Key value
     const response = await fetch("https://live.fapshi.com/initiate-pay", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "apiuser": apiUser,
+        "apiuser": apiKey,
         "apikey": apiKey,
       },
-      body: JSON.stringify(payload),
+      body: JSON.stringify({
+        amount: amount,
+        redirectUrl: "https://starlabsposweb.vercel.app",
+        message: `Starlabs POS — ${planName} Plan`,
+        externalId: `starlabs-${planName.toLowerCase().replace(/\s+/g, "-")}-${Date.now()}`,
+      }),
     });
 
     const data = await response.json();
-    console.log("[Fapshi] Response:", response.status, JSON.stringify(data));
+    console.log("[Fapshi] Status:", response.status, "Body:", JSON.stringify(data));
 
-    // Fapshi returns { link: "https://pay.fapshi.com/..." } on success
     if (response.ok && data.link) {
       return { success: true, link: data.link };
     }
 
     return {
       success: false,
-      error: data.message || `Unexpected response: ${JSON.stringify(data)}`,
+      error: data.message || `Unexpected Fapshi response (${response.status})`,
     };
   } catch (error: unknown) {
     const msg = error instanceof Error ? error.message : String(error);
