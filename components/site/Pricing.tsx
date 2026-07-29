@@ -1,6 +1,8 @@
 "use client";
 
-import { Check, X } from "lucide-react";
+import { useState } from "react";
+import { Check, X, Loader2 } from "lucide-react";
+import { initiateFapshiPayment } from "@/app/actions/payment";
 
 const plans = [
   {
@@ -19,7 +21,7 @@ const plans = [
       { text: "Advanced inventory management", included: false },
       { text: "Priority support",              included: false },
     ],
-    cta: "Start Free Trial",
+    cta: "Buy Now",
     variant: "secondary" as const,
   },
   {
@@ -38,7 +40,7 @@ const plans = [
       { text: "Advanced inventory management", included: true },
       { text: "12h priority support",          included: false },
     ],
-    cta: "Book a Demo",
+    cta: "Buy Now",
     variant: "accent" as const,
   },
   {
@@ -63,8 +65,30 @@ const plans = [
 ];
 
 export default function Pricing() {
+  const [loading, setLoading] = useState<string | null>(null);
+
   const handleNav = (href: string) => {
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleCheckout = async (planId: string, planName: string, priceString: string, defaultHref: string) => {
+    // If it's enterprise, just navigate to contact
+    if (planId === "enterprise") {
+      handleNav(defaultHref);
+      return;
+    }
+
+    setLoading(planId);
+    const amount = parseInt(priceString.replace(/\s/g, ""));
+    const result = await initiateFapshiPayment(planName, amount);
+    
+    if (result.success && result.link) {
+      window.location.href = result.link; // Redirect to Fapshi checkout
+    } else {
+      console.error("Payment initiation failed:", result.error);
+      alert("Failed to initiate payment. Please try again.");
+    }
+    setLoading(null);
   };
 
   return (
@@ -74,7 +98,7 @@ export default function Pricing() {
           <span className="tagline">Pricing</span>
           <h2 className="heading-lg">Transparent pricing</h2>
           <p className="text-body-md mt-4">
-            Choose the plan tailored to your business size. All subscriptions include installation, updates, and a 14-day free trial.
+            Choose the plan tailored to your business size. All subscriptions include installation and updates. Contact us to get started.
           </p>
         </div>
 
@@ -121,10 +145,12 @@ export default function Pricing() {
               </ul>
 
               <button
-                onClick={() => handleNav(plan.variant === "accent" ? "#demo" : "#contact")}
-                className={`btn w-full btn-${plan.variant}`}
+                onClick={() => handleCheckout(plan.id, plan.name, plan.price, plan.variant === "accent" ? "#demo" : "#contact")}
+                disabled={loading === plan.id}
+                className={`btn w-full btn-${plan.variant} flex items-center justify-center gap-2`}
               >
-                {plan.cta}
+                {loading === plan.id && <Loader2 size={18} className="animate-spin" />}
+                {loading === plan.id ? "Processing..." : plan.cta}
               </button>
             </div>
           ))}
