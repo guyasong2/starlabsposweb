@@ -7,57 +7,57 @@ const plans = [
     id: "starter",
     name: "Starter",
     price: "25 000",
-    period: "/ mois",
-    desc: "Idéal pour les petites boutiques individuelles.",
+    period: "/ month",
+    desc: "Ideal for small independent shops.",
     badge: null,
     features: [
-      { text: "1 terminal de caisse",         included: true },
-      { text: "Jusqu'à 200 produits",          included: true },
-      { text: "Historique des ventes",         included: true },
-      { text: "Rapports basiques",             included: true },
-      { text: "Comptes multi-caissiers",       included: false },
-      { text: "Gestion de stock avancée",      included: false },
-      { text: "Support prioritaire",           included: false },
+      { text: "1 POS terminal",                included: true },
+      { text: "Up to 200 products",            included: true },
+      { text: "Sales history",                 included: true },
+      { text: "Basic reports",                 included: true },
+      { text: "Multi-cashier accounts",        included: false },
+      { text: "Advanced inventory management", included: false },
+      { text: "Priority support",              included: false },
     ],
-    cta: "Démarrer l'essai gratuit",
+    cta: "Start Free Trial",
     variant: "secondary" as const,
   },
   {
     id: "professional",
     name: "Professional",
     price: "55 000",
-    period: "/ mois",
-    desc: "Pour les commerces en croissance nécessitant un contrôle total.",
-    badge: "Populaire",
+    period: "/ month",
+    desc: "For growing businesses requiring total control.",
+    badge: "Popular",
     features: [
-      { text: "Terminaux illimités",           included: true },
-      { text: "Produits illimités",            included: true },
-      { text: "Historique complet",            included: true },
-      { text: "Rapports et analyses avancés",  included: true },
-      { text: "Comptes multi-caissiers",       included: true },
-      { text: "Gestion de stock avancée",      included: true },
-      { text: "Support prioritaire 12h",       included: false },
+      { text: "Unlimited terminals",           included: true },
+      { text: "Unlimited products",            included: true },
+      { text: "Complete sales history",        included: true },
+      { text: "Advanced analytics & reports",  included: true },
+      { text: "Multi-cashier accounts",        included: true },
+      { text: "Advanced inventory management", included: true },
+      { text: "12h priority support",          included: false },
     ],
-    cta: "Demander une démo",
+    cta: "Book a Demo",
     variant: "accent" as const,
   },
   {
     id: "enterprise",
     name: "Enterprise",
     price: "120 000",
-    period: "/ mois",
-    desc: "Solutions sur-mesure pour les grandes chaînes et supermarchés.",
+    period: "/ month",
+    desc: "Custom solutions for large chains and supermarkets.",
     badge: null,
     features: [
-      { text: "Multi-boutiques centralisé",    included: true },
-      { text: "Produits & terminaux illimités",included: true },
-      { text: "Tableaux de bord BI",           included: true },
-      { text: "API et intégrations tierces",   included: true },
-      { text: "Rôles et permissions sur-mesure",included: true },
-      { text: "Synchronisation Cloud",         included: true },
-      { text: "Support dédié 24/7",            included: true },
+      { text: "Centralized multi-store",       included: true },
+      { text: "Unlimited products & terminals",included: true },
+      { text: "Business Intelligence dashboard",included: true },
+      { text: "API & third-party integrations",included: true },
+      { text: "Custom roles & permissions",    included: true },
+      { text: "Cloud synchronization",         included: true },
+      { text: "24/7 dedicated support",        included: true },
     ],
-    cta: "Contacter les ventes",
+    cta: "Contact Sales",
     variant: "secondary" as const,
   },
 ];
@@ -71,10 +71,10 @@ export default function Pricing() {
     <section id="pricing" className="section-py">
       <div className="container">
         <div className="text-center mb-16 max-w-2xl mx-auto">
-          <span className="tagline">Tarification</span>
-          <h2 className="heading-lg">Une tarification transparente, en XAF</h2>
+          <span className="tagline">Pricing</span>
+          <h2 className="heading-lg">Transparent pricing, in XAF</h2>
           <p className="text-body-md mt-4">
-            Choisissez le plan adapté à la taille de votre entreprise. Tous nos abonnements incluent l'installation, les mises à jour et un essai de 14 jours.
+            Choose the plan tailored to your business size. All subscriptions include installation, updates, and a 14-day free trial.
           </p>
         </div>
 

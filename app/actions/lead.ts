@@ -1,6 +1,6 @@
 "use server";
 
-import { supabase } from "@/lib/supabase";
+import { createClient } from "@/lib/supabase/server";
 
 export async function submitLead(data: {
   name: string;
@@ -11,8 +11,8 @@ export async function submitLead(data: {
   type: "contact" | "demo";
 }) {
   try {
-    // In a real scenario with a configured DB, this will insert into a 'leads' table
-    // For now we'll do the call to prove the Node.js backend logic exists.
+    const supabase = await createClient();
+
     const { error } = await supabase.from("leads").insert([
       {
         name: data.name,
@@ -33,8 +33,8 @@ export async function submitLead(data: {
     }
 
     return { success: true };
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error("Server Action error:", err);
-    return { success: false, error: err.message };
+    return { success: false, error: err instanceof Error ? err.message : "Unknown error" };
   }
 }

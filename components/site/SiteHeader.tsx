@@ -7,9 +7,9 @@ import Logo from "./Logo";
 import DemoDialog from "./DemoDialog";
 
 const navLinks = [
-  { href: "#features", label: "Fonctionnalités" },
-  { href: "#pricing",  label: "Tarifs" },
-  { href: "#about",    label: "À propos" },
+  { href: "#features", label: "Features" },
+  { href: "#pricing",  label: "Pricing" },
+  { href: "#about",    label: "About Us" },
   { href: "#faq",      label: "FAQ" },
 ];
 
@@ -60,7 +60,7 @@ export default function SiteHeader() {
               Contact
             </button>
             <button onClick={() => setDemoOpen(true)} className="btn btn-primary btn-sm">
-              Démo gratuite
+              Free Demo
             </button>
           </div>
 
@@ -88,10 +88,10 @@ export default function SiteHeader() {
           ))}
           <div className="flex flex-col gap-3 mt-4 border-t border-border-light pt-6">
             <button onClick={() => { setMobileOpen(false); setDemoOpen(true); }} className="btn btn-primary w-full">
-              Réserver une démo
+              Book a Demo
             </button>
             <button onClick={() => handleNav("#contact")} className="btn btn-secondary w-full">
-              Nous contacter
+              Contact Us
             </button>
           </div>
         </div>

@@ -43,8 +43,8 @@ export default function DemoDialog({ open, onClose }: DemoDialogProps) {
               <CalendarCheck size={18} />
             </div>
             <div>
-              <h2 className="font-semibold text-text-main">Réserver une démo</h2>
-              <p className="text-xs text-text-muted">Gratuit · Sans engagement · 30 minutes</p>
+              <h2 className="font-semibold text-text-main">Book a Demo</h2>
+              <p className="text-xs text-text-muted">Free · No commitment · 30 minutes</p>
             </div>
           </div>
           <button

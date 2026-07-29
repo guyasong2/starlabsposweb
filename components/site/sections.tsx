@@ -1,17 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import {
   ShoppingCart,
   Package,
   BarChart3,
   Users,
   FileSpreadsheet,
-  Bell,
-  Shield,
   Smartphone,
-  ArrowRight,
   MapPin,
   Phone,
   Mail,
@@ -60,32 +56,32 @@ export function HeroSection() {
             <div>
               <span className="tagline">Starlabs POS 2.0</span>
               <h1 className="heading-xl">
-                La gestion de point de vente, <span className="text-brand-blue">simplifiée.</span>
+                Point of sale management, <span className="text-brand-blue">simplified.</span>
               </h1>
               <p className="text-body-lg mt-6 max-w-xl">
-                Un logiciel de caisse robuste et fiable conçu pour les entreprises du Cameroun. Gérez vos ventes, stocks et rapports sans dépendre d'une connexion internet.
+                A robust and reliable POS software designed for businesses in Cameroon. Manage your sales, inventory, and reports without relying on an internet connection.
               </p>
 
               {/* CTAs */}
               <div className="flex flex-wrap gap-4 mt-8">
                 <button onClick={() => setDemoOpen(true)} className="btn btn-primary btn-lg">
-                  Réserver une démo
+                  Book a Demo
                 </button>
                 <a href="#features" className="btn btn-secondary btn-lg">
-                  Découvrir les fonctionnalités
+                  Discover Features
                 </a>
               </div>
 
               {/* Trust markers */}
               <div className="mt-8 flex items-center gap-6 text-body-sm">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 size={16} className="text-brand-red" /> 14 jours d'essai
+                  <CheckCircle2 size={16} className="text-brand-red" /> 14-day free trial
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 size={16} className="text-brand-red" /> 100% Hors ligne
+                  <CheckCircle2 size={16} className="text-brand-red" /> 100% Offline
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 size={16} className="text-brand-red" /> Support local
+                  <CheckCircle2 size={16} className="text-brand-red" /> Local support
                 </div>
               </div>
             </div>
@@ -110,38 +106,38 @@ const features = [
   {
     id: "feat-pos",
     icon: <ShoppingCart size={24} />,
-    title: "Caisse Rapide",
-    desc: "Traitez vos encaissements instantanément. Compatible avec les paiements en espèces, Mobile Money et terminaux bancaires.",
+    title: "Fast Checkout",
+    desc: "Process payments instantly. Compatible with cash, Mobile Money, and bank terminals.",
   },
   {
     id: "feat-inventory",
     icon: <Package size={24} />,
-    title: "Gestion des Stocks",
-    desc: "Suivi en temps réel. Recevez des alertes automatiques de réapprovisionnement pour éviter les ruptures.",
+    title: "Inventory Management",
+    desc: "Real-time tracking. Receive automatic restocking alerts to prevent shortages.",
   },
   {
     id: "feat-reports",
     icon: <BarChart3 size={24} />,
-    title: "Tableaux de Bord",
-    desc: "Visualisez vos performances de vente, vos marges et l'activité de vos caissiers en un coup d'œil.",
+    title: "Analytics Dashboards",
+    desc: "Visualize your sales performance, margins, and cashier activity at a glance.",
   },
   {
     id: "feat-cashiers",
     icon: <Users size={24} />,
-    title: "Comptes Multiples",
-    desc: "Créez des profils dédiés pour vos employés avec des droits d'accès stricts et des journaux d'activité.",
+    title: "Multiple Accounts",
+    desc: "Create dedicated profiles for your employees with strict access rights and activity logs.",
   },
   {
     id: "feat-excel",
     icon: <FileSpreadsheet size={24} />,
-    title: "Exports Comptables",
-    desc: "Générez des rapports au format Excel (.xlsx) facilement intégrables dans vos logiciels de comptabilité.",
+    title: "Accounting Exports",
+    desc: "Generate reports in Excel format (.xlsx) easily integrated into your accounting software.",
   },
   {
     id: "feat-offline",
     icon: <Smartphone size={24} />,
-    title: "100% Hors Ligne",
-    desc: "Ne dépendez plus d'internet. Le logiciel fonctionne localement sur votre machine (Windows, Mac, Linux).",
+    title: "100% Offline",
+    desc: "Stop depending on the internet. The software runs locally on your machine (Windows, Mac, Linux).",
   },
 ];
 
@@ -150,10 +146,10 @@ export function FeaturesSection() {
     <section id="features" className="section-py bg-surface-alt">
       <div className="container">
         <div className="text-center mb-16 max-w-2xl mx-auto">
-          <span className="tagline">Fonctionnalités</span>
-          <h2 className="heading-lg">Outils complets pour commerçants exigeants</h2>
+          <span className="tagline">Features</span>
+          <h2 className="heading-lg">Comprehensive tools for demanding merchants</h2>
           <p className="text-body-md mt-4">
-            Tout ce dont vous avez besoin pour piloter votre activité commerciale de A à Z, rassemblé dans une interface claire et intuitive.
+            Everything you need to manage your business from A to Z, gathered in a clean and intuitive interface.
           </p>
         </div>
 
@@ -177,10 +173,10 @@ export function FeaturesSection() {
    ABOUT SECTION
 ───────────────────────────────────────────────────────────── */
 const stats = [
-  { value: "500+", label: "Boutiques Équipées" },
-  { value: "98%",  label: "Taux de Satisfaction" },
-  { value: "24/7", label: "Assistance Technique" },
-  { value: "XAF",  label: "Devise Native" },
+  { value: "500+", label: "Shops Equipped" },
+  { value: "98%", label: "Satisfaction Rate" },
+  { value: "24/7", label: "Technical Support" },
+  { value: "XAF", label: "Native Currency" },
 ];
 
 export function AboutSection() {
@@ -189,17 +185,17 @@ export function AboutSection() {
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <span className="tagline">Notre Expertise</span>
-            <h2 className="heading-lg mb-6">Développé au Cameroun, pour les réalités locales</h2>
+            <span className="tagline">Our Expertise</span>
+            <h2 className="heading-lg mb-6">Developed in Cameroon, for local realities</h2>
             <div className="space-y-4 text-body-md">
               <p>
-                Starlabs Group conçoit des solutions logicielles qui répondent aux véritables défis des entreprises africaines. Nous savons qu'une connexion internet instable ne doit pas bloquer vos ventes.
+                Starlabs Group designs software solutions that address the true challenges of African businesses. We know that an unstable internet connection shouldn't stop your sales.
               </p>
               <p>
-                C'est pourquoi Starlabs POS a été pensé dès le premier jour comme une solution de bureau robuste, sécurisée, et capable de fonctionner en totale autonomie, tout en gérant nativement vos transactions en Francs CFA (XAF).
+                That's why Starlabs POS was built from day one as a robust, secure desktop solution capable of operating completely independently, while natively managing your transactions in CFA Francs (XAF).
               </p>
             </div>
-            
+
             <div className="grid grid-cols-2 gap-6 mt-10">
               {stats.map((s) => (
                 <div key={s.label}>
@@ -231,37 +227,40 @@ export function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Demo Pitch */}
           <div>
-            <span className="tagline">Démonstration</span>
-            <h2 className="heading-md mb-4">Prêt à optimiser votre gestion ?</h2>
+            <span className="tagline">Demonstration</span>
+            <h2 className="heading-md mb-4">Ready to optimize your management?</h2>
             <p className="text-body-md mb-8">
-              Laissez-nous vous montrer comment Starlabs POS s'adapte à votre secteur d'activité. Réservez un échange de 30 minutes avec un expert.
+              Let us show you how Starlabs POS adapts to your industry. Book a 30-minute meeting with an expert.
             </p>
             <div className="space-y-4 mb-8">
               <div className="flex items-center gap-3 text-body-md">
                 <CheckCircle2 size={20} className="text-brand-blue" />
-                <span>Audit rapide de vos besoins actuels</span>
+                <span>Quick audit of your current needs</span>
               </div>
               <div className="flex items-center gap-3 text-body-md">
                 <CheckCircle2 size={20} className="text-brand-blue" />
-                <span>Présentation de l'interface en direct</span>
+                <span>Live interface presentation</span>
               </div>
               <div className="flex items-center gap-3 text-body-md">
                 <CheckCircle2 size={20} className="text-brand-blue" />
-                <span>Configuration de votre période d'essai</span>
+                <span>Configuration of your trial period</span>
               </div>
             </div>
-            
+
             <div className="pt-8 border-t border-border-medium">
-              <h3 className="font-semibold text-text-main mb-4">Ou contactez-nous directement :</h3>
+              <h3 className="font-semibold text-text-main mb-4">Or contact us directly:</h3>
               <div className="space-y-3">
-                <a href="tel:+237600000000" className="flex items-center gap-3 text-body-md hover:text-brand-blue">
-                  <Phone size={18} /> +237 6XX XXX XXX
+                <a href="mailto:service@starlabsgroups.com" className="flex items-center gap-3 text-body-md hover:text-brand-blue">
+                  <Mail size={18} className="shrink-0" /> service@starlabsgroups.com
                 </a>
-                <a href="mailto:contact@starlabsgroup.com" className="flex items-center gap-3 text-body-md hover:text-brand-blue">
-                  <Mail size={18} /> contact@starlabsgroup.com
+                <a href="tel:+237683433528" className="flex items-center gap-3 text-body-md hover:text-brand-blue">
+                  <Phone size={18} className="shrink-0" /> +(237) 683-433-528 (MTN CM)
                 </a>
-                <div className="flex items-center gap-3 text-body-md">
-                  <MapPin size={18} /> Yaoundé, Cameroun
+                <a href="tel:+14693510688" className="flex items-center gap-3 text-body-md hover:text-brand-blue">
+                  <Phone size={18} className="shrink-0" /> +1 (469) 351-0688 (USA)
+                </a>
+                <div className="flex items-center gap-3 text-body-md mt-2">
+                  <MapPin size={18} className="shrink-0" /> Buea, Cameroon
                 </div>
               </div>
             </div>
@@ -269,7 +268,7 @@ export function ContactSection() {
 
           {/* Form */}
           <div className="card">
-            <h3 className="heading-md !text-xl mb-6">Demander une démo</h3>
+            <h3 className="heading-md !text-xl mb-6">Request a Demo</h3>
             <LeadForm mode="demo" />
           </div>
         </div>
@@ -291,29 +290,29 @@ export function SiteFooter() {
           <div className="md:col-span-2">
             <Logo width={140} height={45} />
             <p className="text-body-sm mt-4 max-w-sm">
-              Solutions logicielles professionnelles pour la gestion d'entreprise en Afrique centrale.
+              Professional software solutions for business management in Central Africa.
             </p>
           </div>
           <div>
-            <h4 className="font-semibold text-text-main mb-4">Produit</h4>
+            <h4 className="font-semibold text-text-main mb-4">Product</h4>
             <ul className="space-y-2">
-              <li><a href="#features" className="nav-link !text-sm">Fonctionnalités</a></li>
-              <li><a href="#pricing" className="nav-link !text-sm">Tarifs</a></li>
-              <li><a href="#demo" className="nav-link !text-sm">Demander une démo</a></li>
+              <li><a href="#features" className="nav-link !text-sm">Features</a></li>
+              <li><a href="#pricing" className="nav-link !text-sm">Pricing</a></li>
+              <li><a href="#demo" className="nav-link !text-sm">Request a Demo</a></li>
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold text-text-main mb-4">Entreprise</h4>
+            <h4 className="font-semibold text-text-main mb-4">Company</h4>
             <ul className="space-y-2">
-              <li><a href="#about" className="nav-link !text-sm">À propos</a></li>
+              <li><a href="#about" className="nav-link !text-sm">About Us</a></li>
               <li><a href="#contact" className="nav-link !text-sm">Contact</a></li>
               <li><a href="#faq" className="nav-link !text-sm">FAQ</a></li>
             </ul>
           </div>
         </div>
-        
+
         <div className="border-t border-border-light pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-body-sm">© {year} Starlabs Group. Tous droits réservés.</p>
+          <p className="text-body-sm">© {year} Starlabs Group. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <a href="#" className="text-text-muted hover:text-brand-blue"><IconFacebook /></a>
             <a href="#" className="text-text-muted hover:text-brand-blue"><IconTwitterX /></a>

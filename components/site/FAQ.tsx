@@ -6,28 +6,28 @@ import { ChevronDown } from "lucide-react";
 const faqs = [
   {
     id: "faq-1",
-    q: "Starlabs POS fonctionne-t-il sans connexion Internet ?",
-    a: "Oui, le logiciel est conçu pour fonctionner 100% hors ligne. Toutes vos données (ventes, stocks, employés) sont stockées localement sur votre ordinateur. Une connexion n'est requise que pour les mises à jour logicielles ou la synchronisation multi-boutiques (Plan Enterprise).",
+    q: "Does Starlabs POS work without an internet connection?",
+    a: "Yes, the software is designed to work 100% offline. All your data (sales, inventory, employees) is stored locally on your computer. A connection is only required for software updates or multi-store synchronization (Enterprise Plan).",
   },
   {
     id: "faq-2",
-    q: "Sur quel matériel le logiciel peut-il être installé ?",
-    a: "Starlabs POS est compatible avec les environnements Windows (10, 11), macOS et Linux. Il fonctionne de manière fluide sur du matériel standard de bureau (à partir de 4 Go de RAM).",
+    q: "What hardware can the software be installed on?",
+    a: "Starlabs POS is compatible with Windows (10, 11), macOS, and Linux environments. It runs smoothly on standard desktop hardware (from 4GB of RAM).",
   },
   {
     id: "faq-3",
-    q: "Proposez-vous une assistance pour la configuration initiale ?",
-    a: "Absolument. Nous proposons un accompagnement de bout en bout incluant l'installation, le paramétrage de votre catalogue produits et la formation de vos caissiers. Notre équipe technique s'assure que vous êtes opérationnel le jour même.",
+    q: "Do you offer assistance for initial setup?",
+    a: "Absolutely. We offer end-to-end support including installation, product catalog setup, and cashier training. Our technical team ensures you are operational on the same day.",
   },
   {
     id: "faq-4",
-    q: "Est-il possible de gérer plusieurs points de vente simultanément ?",
-    a: "Oui, notre plan Enterprise inclut un tableau de bord cloud centralisé qui consolide les données de toutes vos succursales en temps réel, vous permettant d'avoir une vue globale sur l'ensemble de votre réseau.",
+    q: "Is it possible to manage multiple point-of-sale locations simultaneously?",
+    a: "Yes, our Enterprise plan includes a centralized cloud dashboard that consolidates data from all your branches in real-time, giving you a global view of your entire network.",
   },
   {
     id: "faq-5",
-    q: "Le logiciel gère-t-il les paiements Mobile Money ?",
-    a: "Oui. L'interface de caisse permet de catégoriser les paiements par espèces, cartes bancaires, ou Mobile Money (MTN, Orange), facilitant ainsi votre réconciliation comptable en fin de journée.",
+    q: "Does the software support Mobile Money payments?",
+    a: "Yes. The checkout interface allows you to categorize payments by cash, bank cards, or Mobile Money (MTN, Orange), making your end-of-day accounting reconciliation much easier.",
   },
 ];
 
@@ -38,8 +38,8 @@ export default function FAQ() {
     <section id="faq" className="section-py">
       <div className="container max-w-4xl">
         <div className="text-center mb-12">
-          <span className="tagline">Foire Aux Questions</span>
-          <h2 className="heading-lg">Questions Fréquentes</h2>
+          <span className="tagline">Frequently Asked Questions</span>
+          <h2 className="heading-lg">Common Questions</h2>
         </div>
 
         <div className="border-t border-border-medium">
@@ -71,12 +71,12 @@ export default function FAQ() {
         
         <div className="text-center mt-10">
           <p className="text-body-md">
-            Vous avez une demande spécifique ?{" "}
+            Have a specific request?{" "}
             <button
               onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
               className="text-brand-blue font-semibold hover:underline bg-transparent border-0 cursor-pointer p-0"
             >
-              Contactez notre équipe de support.
+              Contact our support team.
             </button>
           </p>
         </div>

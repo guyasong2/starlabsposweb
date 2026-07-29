@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import WhatsAppButton from "@/components/site/WhatsAppButton";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -25,8 +26,8 @@ export const metadata: Metadata = {
   publisher: "Starlabs Group",
   openGraph: {
     type: "website",
-    locale: "fr_CM",
-    alternateLocale: "en_US",
+    locale: "en_CM",
+    alternateLocale: "fr_CM",
     url: "https://starlabsgroup.com",
     siteName: "Starlabs POS",
     title: "Starlabs POS — Smart Point of Sale for Cameroon Businesses",
@@ -99,7 +100,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-screen flex flex-col antialiased">{children}</body>
+      <body className="min-h-screen flex flex-col antialiased">
+        {children}
+        <WhatsAppButton />
+      </body>
     </html>
   );
 }

@@ -7,23 +7,23 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const screenshots = [
   {
     src: "/screenshots/dashboard.png",
-    label: "Tableau de bord",
-    desc: "Aperçu en temps réel des performances de vente",
+    label: "Dashboard",
+    desc: "Real-time overview of sales performance",
   },
   {
     src: "/screenshots/products.png",
-    label: "Catalogue",
-    desc: "Gestion unifiée des produits, prix et catégories",
+    label: "Catalog",
+    desc: "Unified management of products, prices, and categories",
   },
   {
     src: "/screenshots/sales-history.png",
-    label: "Historique",
-    desc: "Traçabilité complète des transactions et reçus",
+    label: "History",
+    desc: "Complete traceability of transactions and receipts",
   },
   {
     src: "/screenshots/reports.png",
-    label: "Analyses",
-    desc: "Rapports détaillés sur les méthodes de paiement",
+    label: "Analytics",
+    desc: "Detailed reports on payment methods and trends",
   },
 ];
 
