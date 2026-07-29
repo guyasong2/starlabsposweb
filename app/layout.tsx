@@ -7,7 +7,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://starlabsgroup.com"),
   title: {
-    default: "Starlabs POS — Smart Point of Sale for Cameroon Businesses",
+    default: "Starlabs POS - Smart Point of Sale for Cameroon Businesses",
     template: "%s | Starlabs POS",
   },
   description:
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     alternateLocale: "fr_CM",
     url: "https://starlabsgroup.com",
     siteName: "Starlabs POS",
-    title: "Starlabs POS — Smart Point of Sale for Cameroon Businesses",
+    title: "Starlabs POS - Smart Point of Sale for Cameroon Businesses",
     description:
       "Manage your shop, track inventory, and grow your business with Starlabs POS. Built for Cameroonian businesses.",
     images: [
