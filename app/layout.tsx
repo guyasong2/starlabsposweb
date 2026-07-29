@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import WhatsAppButton from "@/components/site/WhatsAppButton";
+import { Analytics } from "@vercel/analytics/next"
 import "./globals.css";
+
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://starlabsgroup.com"),
@@ -103,6 +105,7 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col antialiased">
         {children}
         <WhatsAppButton />
+        <Analytics />
       </body>
     </html>
   );
